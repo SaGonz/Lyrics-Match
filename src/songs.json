@@ -1,0 +1,14 @@
+{
+    "song0" : {
+        "id" : 0,
+        "title" : "Don't Stop Believin'",
+        "artist" : "Journey",
+        "lyrics" : "Don't stop believing Hold onto that feeling Streetlights, people"
+    },
+    "song1" : {
+        "id" : 1,
+        "title" : "You Get What You Give",
+        "artist" : "The New Radicals",
+        "lyrics" : "Don't give up You've got a reason to live Can't forget We only get what we give"
+    }
+} 
