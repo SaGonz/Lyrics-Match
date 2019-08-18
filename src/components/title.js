@@ -3,14 +3,15 @@ import React from 'react';
 class Title extends React.Component{
 
     state = {
-        title : "",
+        title : this.props.titlep,
     }
-
+    
     render(){
         return( 
-            <p>
-                {this.props.titlep}
-            </p>
+            
+            <div className="title">
+                {this.props.titlep} - {this.props.artistp}
+            </div>
         );
     }
 }

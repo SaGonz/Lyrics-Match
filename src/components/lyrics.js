@@ -9,12 +9,12 @@ class Lyrics extends React.Component{
 
     render(){
         return( 
-            <p>
-                Lyrics: 
-                <br/>
-                {this.props.lyricsp}
-                <br/>
-            </p>
+            <div className="lyrics">
+                <p>
+                    {this.props.lyricsp}
+                </p>
+            </div>
+            
         );
     }
 }

@@ -1,14 +1,19 @@
 {
-    "song0" : {
-        "id" : 0,
+    "0" : {
         "title" : "Don't Stop Believin'",
         "artist" : "Journey",
         "lyrics" : "Don't stop believing Hold onto that feeling Streetlights, people"
     },
-    "song1" : {
-        "id" : 1,
+    "1" : {
         "title" : "You Get What You Give",
         "artist" : "The New Radicals",
         "lyrics" : "Don't give up You've got a reason to live Can't forget We only get what we give"
+    },
+    "2" : {
+        "title" : "Miracle",
+        "artist" : "Caravan Palace",
+        "lyrics" : "Every day is a miracle (Help one another) Connect back with the people (Give it to your lover) And all the people you miss (Let's come around)"
     }
-} 
+
+}
+

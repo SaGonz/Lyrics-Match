@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+  padding: 1rem;
+}
+
+.App-header {
+  background-color: #e7e247;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lyrics{
+  background-color: #efecca;
+  padding: 2rem;
+  margin: 2rem;
+  color: #5e565a;
+  box-shadow: 0px 0px 37px -6px rgba(135,127,39,1);
+
+}
+
+.title{
+  color: #e7e247;
+
+  &:hover { 
+    background-color: #a9cbb7;
+    color: #efecca;
+    box-shadow: inset 0px 0px 45px -4px rgba(71,59,71,0.25);
+  }
+}
+
+.lyrics-section{
+  display: flex;
+}
+
+.icons{
+  height: 40vmin;
+  &:hover{
+    animation-name: bounce;
+  }
+}
