@@ -49,9 +49,9 @@ class Action extends React.Component{
                 {/*<button onClick={() => { this.setState( () => { song : this.getSong()})}}>Yay</button>*/}
                 <button onClick={this.getSong}>Change State</button>
                 <div className="lyrics-section">
-                    <img src={no} className="icons" onClick={this.getSong}/>
+                    <img src={no} className="icons"/>
                     <Lyrics lyricsp={this.state.song.lyrics}/>
-                    <img src={yes} className="icons" onClick={this.getSong}/>
+                    <img src={yes} className="icons" />
                 </div>
                 
             </div>
