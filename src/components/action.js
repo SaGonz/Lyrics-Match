@@ -13,6 +13,8 @@ class Action extends React.Component{
     constructor(props){
         super(props);
         this.getSong = this.getSong.bind(this);
+        this.likedSong = this.likedSong.bind(this);
+        this.dislikedSong = this.dislikedSong.bind(this);
     }
 
     state = {
@@ -23,12 +25,14 @@ class Action extends React.Component{
 
     getRandomNumber( min, max){ return Math.floor( Math.random() * (max - min) + min);}
 
+    addLineBreak(){ return <br/>}
+
     //When this method is called it pulls the song from a list with a random index,
     //and sets 'song' 's state to the response, re-rendering its children 
     //and updating their content.
     getSong () {
 
-        let r = this.getRandomNumber(0,3);
+        let r = this.getRandomNumber(0,4);
         let randomSongIndex = r.toString();
 
         const song = songs[randomSongIndex];
@@ -38,20 +42,38 @@ class Action extends React.Component{
 
         this.setState({song: song})
         console.log('after set state',this.state.song)
+
+        return song;
+    }
+    
+    likedSong(){
+        //push liked song to state
+        this.setState(
+            state => { 
+                const likedSongsList = state.likedSongs.push(this.getSong());
+            });
+        
+        console.log('first liked song', this.state.likedSongs[0])
     }
 
+    dislikedSong(){
+        this.setState(
+            state => {
+                const dislikedSongsList = state.dislikedSongs.push(this.getSong());
+            }
+        );
+
+        console.log('first disliked song', this.state.dislikedSongs[0])
+    }
     render(){
 
         return( 
             <div>
-                <Title titlep={this.state.song.title} artistp={this.state.song.artist}/>
-                {/*The functions need to be passed to onClick, not set directly there ( e.g. , onClick={getSong()} is wrong)*/}
-                {/*<button onClick={() => { this.setState( () => { song : this.getSong()})}}>Yay</button>*/}
-                <button onClick={this.getSong}>Change State</button>
+                <p className="titleParent"><Title titlep={this.state.song.title} artistp={this.state.song.artist}/></p>
                 <div className="lyrics-section">
-                    <img src={no} className="icons"/>
+                    <img id="no" src={no} className="icons" onClick={this.dislikedSong}/>
                     <Lyrics lyricsp={this.state.song.lyrics}/>
-                    <img src={yes} className="icons" />
+                    <img id="yes" src={yes} className="icons" onClick={this.likedSong}/>
                 </div>
                 
             </div>

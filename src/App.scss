@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -33,28 +35,39 @@
   background-color: #efecca;
   padding: 2rem;
   margin: 2rem;
-  color: #5e565a;
   box-shadow: 0px 0px 37px -6px rgba(135,127,39,1);
+
+  color: #5e565a;
+  font-family: 'PT Serif', serif;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
 
 }
 
 .title{
   color: #e7e247;
+  font-family: 'PT Serif', serif;
+  width: 50%;
 
   &:hover { 
     background-color: #a9cbb7;
     color: #efecca;
     box-shadow: inset 0px 0px 45px -4px rgba(71,59,71,0.25);
+    animation: slide-top 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s ;
+    
   }
 }
 
-.lyrics-section{
+.lyrics-section, .titleParent{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons{
   height: 40vmin;
   &:hover{
-    animation-name: bounce;
+    animation: heartbeat 2.5s ease-in-out 0.6s infinite both;
+  
   }
 }
+ 

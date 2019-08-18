@@ -2,18 +2,22 @@
     "0" : {
         "title" : "Don't Stop Believin'",
         "artist" : "Journey",
-        "lyrics" : "Don't stop believing Hold onto that feeling Streetlights, people"
+        "lyrics" : "Don't stop believing, hold onto that feeling."
     },
     "1" : {
         "title" : "You Get What You Give",
         "artist" : "The New Radicals",
-        "lyrics" : "Don't give up You've got a reason to live Can't forget We only get what we give"
+        "lyrics" : "Don't give up, you've got a reason to live. Can't forget: we only get what we give"
     },
     "2" : {
         "title" : "Miracle",
         "artist" : "Caravan Palace",
-        "lyrics" : "Every day is a miracle (Help one another) Connect back with the people (Give it to your lover) And all the people you miss (Let's come around)"
+        "lyrics" : "Every day is a miracle (Help one another). Connect back with the people (Give it to your lover), and all the people you miss (Let's come around)."
+    },
+    "3":{
+        "title" : "Counting Stars",
+        "artist": "One Republic",
+        "lyrics": "Everything that drowns me makes me want to fly"
     }
-
 }
 
