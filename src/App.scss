@@ -4,13 +4,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-  padding: 1rem;
-}
-
 .App-header {
   background-color: #e7e247;
   min-height: 100vh;
@@ -22,25 +15,10 @@
   color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.lyrics{
-  background-color: #efecca;
-  padding: 2rem;
-  margin: 2rem;
-  box-shadow: 0px 0px 37px -6px rgba(135,127,39,1);
-
-  color: #5e565a;
-  font-family: 'PT Serif', serif;
-  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
-
+.lyrics-section, .titleParent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .title{
@@ -57,12 +35,6 @@
   }
 }
 
-.lyrics-section, .titleParent{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .icons{
   height: 40vmin;
   &:hover{
@@ -70,4 +42,21 @@
   
   }
 }
+
+.lyrics{
+  background-color: #efecca;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 0px 0px 37px -6px rgba(135,127,39,1);
+
+  color: #5e565a;
+  font-family: 'PT Serif', serif;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+
+}
+
+
+
+
+
  
