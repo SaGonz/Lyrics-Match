@@ -17,13 +17,16 @@ class Action extends React.Component{
         this.getSong = this.getSong.bind(this);
         this.likedSong = this.likedSong.bind(this);
         this.dislikedSong = this.dislikedSong.bind(this);
+        this.showTheList = this.showTheList.bind(this);
+        this.hideTheList = this.hideTheList.bind(this);
     }
 
     state = {
         song: {},
         likedSongs: [],
         dislikedSongs: [],
-        viewedSongs: [-1]
+        viewedSongs: [-1],
+        showList : false
     }
 
     getRandomNumber( min, max){ return Math.floor( Math.random() * (max - min) + min);}
@@ -42,6 +45,8 @@ class Action extends React.Component{
         
         let randomSongIndex = r.toString();
         const song = songs[randomSongIndex];
+        //
+        let request = 'https://api.genius.com/search?q=Paranoid&access_token=ge3Sn2PUsoSJJ_1nMbItCwn3TS6RS7HnC4D9ozWxJSj0Df3Bx2ylV3iyb55pGxtc';
 
         this.setState(
             {
@@ -51,7 +56,7 @@ class Action extends React.Component{
 
         this.setState(
             state => { 
-                const viewedSongList = state.viewedSongs.push(randomSongIndex);
+                viewedSongList: state.viewedSongs.push(randomSongIndex);
             }
         );
         
@@ -62,11 +67,12 @@ class Action extends React.Component{
         //Pushing liked songs to state
         this.setState(
             state => { 
-                const likedSongsList = state.likedSongs.push(this.getSong());
+                likedSongsList: state.likedSongs.push(this.getSong());
             }
         );
         
         console.log('first liked song', this.state.likedSongs[0])
+        console.log('all the liked songs', this.state.likedSongs)
     }
 
     dislikedSong(){
@@ -77,21 +83,58 @@ class Action extends React.Component{
         );
 
         console.log('first disliked song', this.state.dislikedSongs[0])
+        console.log('all the disliked songs', this.state.dislikedSongs)
     }
+
+    getXY(element){
+        console.log(element.target.getBoundingClientRect())
+    }
+
+    showTheList(){
+        this.setState({showList : true})
+    }
+
+    hideTheList(){
+        this.setState({showList : false},
+            () => {
+                document.removeEventListener('click', this.hideTheList);
+            }
+        )
+    }
+
     render(){
 
         return( 
             <div>
-                <p className="titleParent">
-                    <Title titlep={this.state.song.title} artistp={this.state.song.artist}/>
-                </p>
-                <div className="lyrics-section">
-                    <img id="no" src={no} className="icons" onClick={this.dislikedSong}/>
-                    <Lyrics lyricsp={this.state.song.lyrics}/>
-                    <img id="yes" src={yes} className="icons" onClick={this.likedSong}/>
+                <div>
+                    <p>Who's this from?</p>
+                    <p className="titleParent">
+                        <Title titlep={this.state.song.title} artistp={this.state.song.artist}/>
+                    </p>
+                    <div className="lyrics-section">
+                        <img id="no" src={no} className="icons" onClick={this.dislikedSong} onMouseOver={this.getXY}/>
+                        <Lyrics lyricsp={this.state.song.lyrics}/>
+                        <img id="yes" src={yes} className="icons" onClick={this.likedSong}/>
+                    </div>
                 </div>
-                
+                <div className="likedTab">
+                    <p></p>
+                    <p onMouseOver={this.showTheList}>Liked songs</p>
+                    { 
+                        this.state.showList
+                        ?
+                        (
+                            <ul>
+                                {this.state.likedSongs.map((item, key) => <li key={item.id}> {item.title} by {item.artist}</li>)}
+                            </ul>
+                        )
+                        :
+                        (null)
+                    }
+                    
+                </div>
             </div>
+            
         );
     }
 }
